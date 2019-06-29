@@ -18,11 +18,6 @@ class App extends React.Component{
             </header> 
             <div>
             <div>
-              <ul>
-                <li><Link to={'/'}>Home</Link></li>
-                <li><Link to={'notes'}>Notes</Link></li>
-                <li><Link to={'/notes/addnew'}>Add Notes</Link></li>
-              </ul>
                 <Switch>
                   <Route path='/' component={Home}/>
                   <Route path='/notes' component={Notes}/>
