@@ -1,0 +1,11 @@
+.noteLists{
+    text-align: center
+}
+
+.container{
+    display:flex;
+}
+
+.container .childContainers{
+    width:48%;
+}

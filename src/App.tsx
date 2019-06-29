@@ -1,26 +1,44 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Notes from '../src/components/notes'
+import Home from '../src/components/home'
+import AddNotes from '../src/components/addNotes'
+import { Switch, Route, Link } from 'react-router-dom'
+//import {BrowserRouter, Link, Match} from 'react-router'
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+  render(){
+    return(
+          <div>
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <h3>Crud Operations</h3>
+            </header> 
+            <div>
+            <div>
+              <ul>
+                <li><Link to={'/'}>Home</Link></li>
+                <li><Link to={'notes'}>Notes</Link></li>
+                <li><Link to={'/notes/addnew'}>Add Notes</Link></li>
+              </ul>
+                <Switch>
+                  <Route path='/' component={Home}/>
+                  <Route path='/notes' component={Notes}/>
+                  <Route path='/notes/addnew' component={AddNotes} />
+                  <Route path="/notes/:_id" comonent={Notes}/>
+                </Switch>
+            </div>
+            <Notes />
+            </div>
+            {/* <Notes /> */}
+          </div>
+    )
+  }
+
 }
 
+
 export default App;
+
